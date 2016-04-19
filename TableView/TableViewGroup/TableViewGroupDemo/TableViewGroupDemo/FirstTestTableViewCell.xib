@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="KGk-i7-Jjw" customClass="FirstTestTableViewCell" customModule="TableViewGroupDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35B-mW-Pxw">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="105.5"/>
+                        <color key="backgroundColor" red="0.94129638306099506" green="1" blue="0.55597484332980973" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-kd-Pfv">
+                        <rect key="frame" x="110" y="0.0" width="100.5" height="105.5"/>
+                        <color key="backgroundColor" red="1" green="0.58007875541822396" blue="0.66706583681353626" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mox-jE-P92">
+                        <rect key="frame" x="220" y="0.0" width="100" height="105.5"/>
+                        <color key="backgroundColor" red="0.48934894996755862" green="0.88562203057109878" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Mox-jE-P92" secondAttribute="trailing" id="1LP-xq-eBs"/>
+                    <constraint firstAttribute="bottom" secondItem="35B-mW-Pxw" secondAttribute="bottom" id="DVs-EG-3Ax"/>
+                    <constraint firstItem="35B-mW-Pxw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GKw-lO-hCz"/>
+                    <constraint firstItem="Mox-jE-P92" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KUq-6q-5vx"/>
+                    <constraint firstItem="Mox-jE-P92" firstAttribute="leading" secondItem="PTR-kd-Pfv" secondAttribute="trailing" constant="10" id="KlT-df-alF"/>
+                    <constraint firstItem="PTR-kd-Pfv" firstAttribute="leading" secondItem="35B-mW-Pxw" secondAttribute="trailing" constant="10" id="OFJ-zF-5LC"/>
+                    <constraint firstAttribute="bottom" secondItem="PTR-kd-Pfv" secondAttribute="bottom" id="VFL-3X-iRK"/>
+                    <constraint firstItem="PTR-kd-Pfv" firstAttribute="leading" secondItem="35B-mW-Pxw" secondAttribute="trailing" constant="10" id="bGB-dm-OxF"/>
+                    <constraint firstAttribute="bottom" secondItem="Mox-jE-P92" secondAttribute="bottom" id="faR-MD-2o1"/>
+                    <constraint firstItem="35B-mW-Pxw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h3x-vX-d1F"/>
+                    <constraint firstItem="PTR-kd-Pfv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hgj-Q5-1RX"/>
+                    <constraint firstItem="PTR-kd-Pfv" firstAttribute="width" secondItem="35B-mW-Pxw" secondAttribute="width" id="kkA-Ko-VvN"/>
+                    <constraint firstItem="Mox-jE-P92" firstAttribute="width" secondItem="35B-mW-Pxw" secondAttribute="width" id="lh5-RZ-dbs"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="bGB-dm-OxF"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="500" y="406"/>
+        </tableViewCell>
+    </objects>
+</document>
