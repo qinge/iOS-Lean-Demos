@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		252DAD351CF8143A001756B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD341CF8143A001756B2 /* main.m */; };
+		252DAD381CF8143A001756B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD371CF8143A001756B2 /* AppDelegate.m */; };
+		252DAD3B1CF8143A001756B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD3A1CF8143A001756B2 /* ViewController.m */; };
+		252DAD3E1CF8143A001756B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252DAD3C1CF8143A001756B2 /* Main.storyboard */; };
+		252DAD401CF8143A001756B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 252DAD3F1CF8143A001756B2 /* Assets.xcassets */; };
+		252DAD431CF8143A001756B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252DAD411CF8143A001756B2 /* LaunchScreen.storyboard */; };
+		252DAD4C1CF81940001756B2 /* RecodingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD4B1CF81940001756B2 /* RecodingViewController.m */; };
+		252DAD4F1CF81AE7001756B2 /* StartRecoderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */; };
+		252DAD551CF821FA001756B2 /* RecorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD541CF821FA001756B2 /* RecorderManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		252DAD301CF8143A001756B2 /* RecordVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		252DAD341CF8143A001756B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		252DAD361CF8143A001756B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		252DAD371CF8143A001756B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		252DAD391CF8143A001756B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		252DAD3A1CF8143A001756B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		252DAD3D1CF8143A001756B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		252DAD3F1CF8143A001756B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		252DAD421CF8143A001756B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		252DAD441CF8143A001756B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		252DAD4A1CF81940001756B2 /* RecodingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecodingViewController.h; sourceTree = "<group>"; };
+		252DAD4B1CF81940001756B2 /* RecodingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecodingViewController.m; sourceTree = "<group>"; };
+		252DAD4D1CF81AE7001756B2 /* StartRecoderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRecoderButton.h; sourceTree = "<group>"; };
+		252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRecoderButton.m; sourceTree = "<group>"; };
+		252DAD531CF821FA001756B2 /* RecorderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderManager.h; sourceTree = "<group>"; };
+		252DAD541CF821FA001756B2 /* RecorderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		252DAD2D1CF8143A001756B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		252DAD271CF8143A001756B2 = {
+			isa = PBXGroup;
+			children = (
+				252DAD321CF8143A001756B2 /* 视频录制 */,
+				252DAD311CF8143A001756B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		252DAD311CF8143A001756B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				252DAD301CF8143A001756B2 /* RecordVideo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		252DAD321CF8143A001756B2 /* 视频录制 */ = {
+			isa = PBXGroup;
+			children = (
+				252DAD361CF8143A001756B2 /* AppDelegate.h */,
+				252DAD371CF8143A001756B2 /* AppDelegate.m */,
+				252DAD391CF8143A001756B2 /* ViewController.h */,
+				252DAD3A1CF8143A001756B2 /* ViewController.m */,
+				252DAD3C1CF8143A001756B2 /* Main.storyboard */,
+				252DAD3F1CF8143A001756B2 /* Assets.xcassets */,
+				252DAD411CF8143A001756B2 /* LaunchScreen.storyboard */,
+				252DAD441CF8143A001756B2 /* Info.plist */,
+				252DAD331CF8143A001756B2 /* Supporting Files */,
+				252DAD4A1CF81940001756B2 /* RecodingViewController.h */,
+				252DAD4B1CF81940001756B2 /* RecodingViewController.m */,
+				252DAD4D1CF81AE7001756B2 /* StartRecoderButton.h */,
+				252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */,
+				252DAD531CF821FA001756B2 /* RecorderManager.h */,
+				252DAD541CF821FA001756B2 /* RecorderManager.m */,
+			);
+			path = "视频录制";
+			sourceTree = "<group>";
+		};
+		252DAD331CF8143A001756B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				252DAD341CF8143A001756B2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		252DAD2F1CF8143A001756B2 /* 视频录制 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 252DAD471CF8143A001756B2 /* Build configuration list for PBXNativeTarget "视频录制" */;
+			buildPhases = (
+				252DAD2C1CF8143A001756B2 /* Sources */,
+				252DAD2D1CF8143A001756B2 /* Frameworks */,
+				252DAD2E1CF8143A001756B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "视频录制";
+			productName = "视频录制";
+			productReference = 252DAD301CF8143A001756B2 /* RecordVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		252DAD281CF8143A001756B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "snqu-ios";
+				TargetAttributes = {
+					252DAD2F1CF8143A001756B2 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2ZDM6SJYBD;
+					};
+				};
+			};
+			buildConfigurationList = 252DAD2B1CF8143A001756B2 /* Build configuration list for PBXProject "视频录制" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 252DAD271CF8143A001756B2;
+			productRefGroup = 252DAD311CF8143A001756B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				252DAD2F1CF8143A001756B2 /* 视频录制 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		252DAD2E1CF8143A001756B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252DAD431CF8143A001756B2 /* LaunchScreen.storyboard in Resources */,
+				252DAD401CF8143A001756B2 /* Assets.xcassets in Resources */,
+				252DAD3E1CF8143A001756B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		252DAD2C1CF8143A001756B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252DAD3B1CF8143A001756B2 /* ViewController.m in Sources */,
+				252DAD4C1CF81940001756B2 /* RecodingViewController.m in Sources */,
+				252DAD381CF8143A001756B2 /* AppDelegate.m in Sources */,
+				252DAD351CF8143A001756B2 /* main.m in Sources */,
+				252DAD551CF821FA001756B2 /* RecorderManager.m in Sources */,
+				252DAD4F1CF81AE7001756B2 /* StartRecoderButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		252DAD3C1CF8143A001756B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				252DAD3D1CF8143A001756B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		252DAD411CF8143A001756B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				252DAD421CF8143A001756B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		252DAD451CF8143A001756B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		252DAD461CF8143A001756B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		252DAD481CF8143A001756B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "视频录制/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord;
+				PRODUCT_NAME = RecordVideo;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		252DAD491CF8143A001756B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "视频录制/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord;
+				PRODUCT_NAME = RecordVideo;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		252DAD2B1CF8143A001756B2 /* Build configuration list for PBXProject "视频录制" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				252DAD451CF8143A001756B2 /* Debug */,
+				252DAD461CF8143A001756B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		252DAD471CF8143A001756B2 /* Build configuration list for PBXNativeTarget "视频录制" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				252DAD481CF8143A001756B2 /* Debug */,
+				252DAD491CF8143A001756B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 252DAD281CF8143A001756B2 /* Project object */;
+}

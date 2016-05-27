@@ -36,8 +36,6 @@ extension UINavigationBar {
         if self.overlay == nil {
             self.overlay = UIView(frame: CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20))
             self.overlay?.userInteractionEnabled = false
-            
-            // http://blog.csdn.net/yanyanforest/article/details/48680583
             self.overlay?.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin ,  UIViewAutoresizing.FlexibleRightMargin]
         }
         self.insertSubview(self.overlay!, atIndex: 0)
