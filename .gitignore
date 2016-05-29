@@ -50,3 +50,7 @@ fastlane/screenshots
 
 # OS X
 .DS_Store
+
+# Reveal
+Reveal.*
+
