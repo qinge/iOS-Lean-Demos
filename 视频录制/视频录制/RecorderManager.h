@@ -10,13 +10,18 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef  void(^ authorizationResult)(BOOL granted);
+
 @interface RecorderManager : NSObject
 
 @property (nonatomic, assign) BOOL isRecording;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 
-+(instancetype)sharedInstance;
 
+-(void)authorizationPermissionWithBlock:(authorizationResult) block;
+
+-(void)startPreview;
+-(void)stopPreview;
 
 -(void)startRecord;
 -(void)stopRecord;

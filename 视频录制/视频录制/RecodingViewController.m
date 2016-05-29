@@ -9,11 +9,13 @@
 #import "RecodingViewController.h"
 #import "StartRecoderButton.h"
 #import "RecorderManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface RecodingViewController ()<UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *preview;
 @property (weak, nonatomic) IBOutlet StartRecoderButton *startRecoderButton;
+@property (nonatomic, strong) RecorderManager *recorderManager;
 
 
 @end
@@ -22,12 +24,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [RecorderManager sharedInstance].previewLayer.frame = self.preview.bounds;
-    [self.preview.layer addSublayer:[RecorderManager sharedInstance].previewLayer];
+    
+    [self setupRecorderManager];
+    
+}
+
+
+-(void)setupRecorderManager{
+    self.recorderManager = [[RecorderManager alloc] init];
+    [self.preview.layer addSublayer:self.recorderManager.previewLayer];
+    self.preview.clipsToBounds = YES;
+    
+    self.recorderManager.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    self.recorderManager.previewLayer.frame = self.preview.bounds;
+    self.recorderManager.previewLayer.position = CGPointMake(CGRectGetMidX(self.preview.bounds), CGRectGetMidY(self.preview.bounds));
+    
+    [self.recorderManager authorizationPermissionWithBlock:^(BOOL granted) {
+        if (granted) {
+            [self.recorderManager startPreview];
+        }else{
+            //
+            self.startRecoderButton.enabled = NO;
+        }
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.recorderManager startPreview];
 }
 
 #pragma mark - UINavigationBarDelegate
@@ -37,9 +67,10 @@
 }
 
 
+
 // 需要将手动添加到 xib 中的 NavigationBar 的 delegate 设置为 self
 - (IBAction)goBack:(id)sender {
-    [[RecorderManager sharedInstance] stopRecord];
+    [self.recorderManager stopPreview];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -48,10 +79,12 @@
 }
 
 - (IBAction)startRecoderAction:(StartRecoderButton *)sender {
-    if ([[RecorderManager sharedInstance] isRecording]) {
-        [[RecorderManager sharedInstance] stopRecord];
+    if ([self.recorderManager isRecording]) {
+        [self.recorderManager stopPreview];
+        [self.recorderManager stopRecord];
     }else{
-        [[RecorderManager sharedInstance] startRecord];
+        [self.recorderManager startPreview];
+        [self.recorderManager startRecord];
     }
 }
 
