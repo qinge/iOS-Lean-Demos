@@ -26,4 +26,6 @@ typedef  void(^ authorizationResult)(BOOL granted);
 -(void)startRecord;
 -(void)stopRecord;
 
+-(BOOL)transferCameraPosition;
+
 @end

@@ -76,6 +76,7 @@
 
 
 - (IBAction)transferCameraPosition:(id)sender {
+    [self.recorderManager transferCameraPosition];
 }
 
 - (IBAction)startRecoderAction:(StartRecoderButton *)sender {

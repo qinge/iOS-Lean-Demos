@@ -16,10 +16,10 @@
 		252DAD4C1CF81940001756B2 /* RecodingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD4B1CF81940001756B2 /* RecodingViewController.m */; };
 		252DAD4F1CF81AE7001756B2 /* StartRecoderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */; };
 		252DAD551CF821FA001756B2 /* RecorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD541CF821FA001756B2 /* RecorderManager.m */; };
+		25A9B7871CFBD89900854331 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9B7861CFBD89900854331 /* Reveal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		251544DE1CF9F5030072E773 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		252DAD301CF8143A001756B2 /* RecordVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		252DAD341CF8143A001756B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		252DAD361CF8143A001756B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,6 +36,7 @@
 		252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRecoderButton.m; sourceTree = "<group>"; };
 		252DAD531CF821FA001756B2 /* RecorderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderManager.h; sourceTree = "<group>"; };
 		252DAD541CF821FA001756B2 /* RecorderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderManager.m; sourceTree = "<group>"; };
+		25A9B7861CFBD89900854331 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A9B7871CFBD89900854331 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +54,7 @@
 		252DAD271CF8143A001756B2 = {
 			isa = PBXGroup;
 			children = (
-				251544DE1CF9F5030072E773 /* Reveal.framework */,
+				25A9B7861CFBD89900854331 /* Reveal.framework */,
 				252DAD321CF8143A001756B2 /* 视频录制 */,
 				252DAD311CF8143A001756B2 /* Products */,
 			);
@@ -284,8 +286,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MONSTAR LAB,INC.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MONSTAR LAB,INC.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 378144946@qq.com (Y8S2CM7CD4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 378144946@qq.com (Y8S2CM7CD4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -299,9 +301,9 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord;
 				PRODUCT_NAME = RecordVideo;
-				PROVISIONING_PROFILE = "49e43ae1-2176-41c1-8bec-bb047e7f2583";
+				PROVISIONING_PROFILE = "e9116b0c-fcf2-4e83-8d83-c85253865531";
 			};
 			name = Debug;
 		};
@@ -309,8 +311,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MONSTAR LAB,INC.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MONSTAR LAB,INC.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 378144946@qq.com (Y8S2CM7CD4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 378144946@qq.com (Y8S2CM7CD4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -324,9 +326,9 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qin.videoRecord;
 				PRODUCT_NAME = RecordVideo;
-				PROVISIONING_PROFILE = "49e43ae1-2176-41c1-8bec-bb047e7f2583";
+				PROVISIONING_PROFILE = "e9116b0c-fcf2-4e83-8d83-c85253865531";
 			};
 			name = Release;
 		};
