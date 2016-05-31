@@ -30,6 +30,7 @@
 }
 
 
+
 -(void)setupRecorderManager{
     self.recorderManager = [[RecorderManager alloc] init];
     [self.preview.layer addSublayer:self.recorderManager.previewLayer];

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+// Pipleline: 管道
+typedef NS_ENUM(NSInteger, PiplelineMode){
+    PiplelineModeMoveFileOutput = 0,
+    PipelineModeAssetWriter
+};
+
 @interface RecodingViewController : UIViewController
+
+@property (nonatomic, assign) PiplelineMode mode;
 
 @end

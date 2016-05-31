@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RecodingViewController.h"
 
 @interface ViewController ()
 
@@ -23,5 +24,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@""]) {
+        
+    }else if ([segue.identifier isEqualToString:@""]){
+        
+    }
+}
+
+
 
 @end

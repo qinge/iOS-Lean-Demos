@@ -17,6 +17,11 @@
 		252DAD4F1CF81AE7001756B2 /* StartRecoderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD4E1CF81AE7001756B2 /* StartRecoderButton.m */; };
 		252DAD551CF821FA001756B2 /* RecorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DAD541CF821FA001756B2 /* RecorderManager.m */; };
 		25A9B7871CFBD89900854331 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9B7861CFBD89900854331 /* Reveal.framework */; };
+		25EF23D11CFD321C00425024 /* CaptureSessionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EF23D01CFD321C00425024 /* CaptureSessionCoordinator.m */; };
+		25EF23D41CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EF23D31CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.m */; };
+		25EF23D81CFD592B00425024 /* IDPermissionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EF23D71CFD592B00425024 /* IDPermissionsManager.m */; };
+		25EF23DB1CFD593400425024 /* IDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EF23DA1CFD593400425024 /* IDFileManager.m */; };
+		25EF23DE1CFD5AC100425024 /* AssertWriterCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EF23DD1CFD5AC100425024 /* AssertWriterCoordinator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,16 @@
 		252DAD531CF821FA001756B2 /* RecorderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderManager.h; sourceTree = "<group>"; };
 		252DAD541CF821FA001756B2 /* RecorderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderManager.m; sourceTree = "<group>"; };
 		25A9B7861CFBD89900854331 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		25EF23CF1CFD321C00425024 /* CaptureSessionCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionCoordinator.h; sourceTree = "<group>"; };
+		25EF23D01CFD321C00425024 /* CaptureSessionCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionCoordinator.m; sourceTree = "<group>"; };
+		25EF23D21CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionAssetWriterCoordinator.h; sourceTree = "<group>"; };
+		25EF23D31CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionAssetWriterCoordinator.m; sourceTree = "<group>"; };
+		25EF23D61CFD592B00425024 /* IDPermissionsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPermissionsManager.h; sourceTree = "<group>"; };
+		25EF23D71CFD592B00425024 /* IDPermissionsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPermissionsManager.m; sourceTree = "<group>"; };
+		25EF23D91CFD593400425024 /* IDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFileManager.h; sourceTree = "<group>"; };
+		25EF23DA1CFD593400425024 /* IDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFileManager.m; sourceTree = "<group>"; };
+		25EF23DC1CFD5AC100425024 /* AssertWriterCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertWriterCoordinator.h; sourceTree = "<group>"; };
+		25EF23DD1CFD5AC100425024 /* AssertWriterCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssertWriterCoordinator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +86,11 @@
 		252DAD321CF8143A001756B2 /* 视频录制 */ = {
 			isa = PBXGroup;
 			children = (
+				25EF23D51CFD58FE00425024 /* Utils */,
+				25EF23CF1CFD321C00425024 /* CaptureSessionCoordinator.h */,
+				25EF23D01CFD321C00425024 /* CaptureSessionCoordinator.m */,
+				25EF23CE1CFD31D900425024 /* AVAssetWriter */,
+				25EF23CD1CFD31C600425024 /* AVMovieFileOutput */,
 				252DAD361CF8143A001756B2 /* AppDelegate.h */,
 				252DAD371CF8143A001756B2 /* AppDelegate.m */,
 				252DAD391CF8143A001756B2 /* ViewController.h */,
@@ -96,6 +116,35 @@
 				252DAD341CF8143A001756B2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25EF23CD1CFD31C600425024 /* AVMovieFileOutput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AVMovieFileOutput;
+			sourceTree = "<group>";
+		};
+		25EF23CE1CFD31D900425024 /* AVAssetWriter */ = {
+			isa = PBXGroup;
+			children = (
+				25EF23D21CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.h */,
+				25EF23D31CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.m */,
+				25EF23DC1CFD5AC100425024 /* AssertWriterCoordinator.h */,
+				25EF23DD1CFD5AC100425024 /* AssertWriterCoordinator.m */,
+			);
+			name = AVAssetWriter;
+			sourceTree = "<group>";
+		};
+		25EF23D51CFD58FE00425024 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				25EF23D91CFD593400425024 /* IDFileManager.h */,
+				25EF23DA1CFD593400425024 /* IDFileManager.m */,
+				25EF23D61CFD592B00425024 /* IDPermissionsManager.h */,
+				25EF23D71CFD592B00425024 /* IDPermissionsManager.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25EF23DB1CFD593400425024 /* IDFileManager.m in Sources */,
 				252DAD3B1CF8143A001756B2 /* ViewController.m in Sources */,
+				25EF23D11CFD321C00425024 /* CaptureSessionCoordinator.m in Sources */,
+				25EF23DE1CFD5AC100425024 /* AssertWriterCoordinator.m in Sources */,
+				25EF23D41CFD58A300425024 /* CaptureSessionAssetWriterCoordinator.m in Sources */,
 				252DAD4C1CF81940001756B2 /* RecodingViewController.m in Sources */,
+				25EF23D81CFD592B00425024 /* IDPermissionsManager.m in Sources */,
 				252DAD381CF8143A001756B2 /* AppDelegate.m in Sources */,
 				252DAD351CF8143A001756B2 /* main.m in Sources */,
 				252DAD551CF821FA001756B2 /* RecorderManager.m in Sources */,
