@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, PiplelineMode){
 };
 
 @interface RecodingViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
 
 @property (nonatomic, assign) PiplelineMode mode;
 

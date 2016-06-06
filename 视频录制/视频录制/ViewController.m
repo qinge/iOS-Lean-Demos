@@ -26,10 +26,11 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@""]) {
-        
-    }else if ([segue.identifier isEqualToString:@""]){
-        
+    RecodingViewController *rvc = (RecodingViewController *)segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"MovieFileOutput"]) {
+        rvc.mode = PiplelineModeMoveFileOutput;
+    }else if ([segue.identifier isEqualToString:@"AssetWriter"]){
+        rvc.mode = PipelineModeAssetWriter;
     }
 }
 

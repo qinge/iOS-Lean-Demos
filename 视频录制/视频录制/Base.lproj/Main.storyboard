@@ -131,6 +131,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customNavigationBar" destination="j4G-YF-N1h" id="bYD-N3-Z9e"/>
+                        <outlet property="navigationBarTitle" destination="q3J-fR-em3" id="kyp-y7-tSM"/>
                         <outlet property="preview" destination="Gp7-nu-lML" id="Qaj-42-dlJ"/>
                         <outlet property="startRecoderButton" destination="5CL-II-cXM" id="1e2-ib-EPf"/>
                     </connections>

@@ -70,8 +70,8 @@
 -(AVCaptureSession *)setupCaptureSession{
     AVCaptureSession *captureSession = [AVCaptureSession new];
     
-    [self addDefaultCameraInputToCaptureSession:self.captureSession];
-    [self addDefaultMicInputToCaptureSession:self.captureSession];
+    [self addDefaultCameraInputToCaptureSession:captureSession];
+    [self addDefaultMicInputToCaptureSession:captureSession];
     
     return captureSession;
 }

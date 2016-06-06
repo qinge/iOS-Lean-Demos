@@ -193,7 +193,7 @@ typedef NS_ENUM(NSInteger, RecordingStatus) {
                         [self.delegate coordinatorDidBeginRecording:self];
                     }
                 });
-            }else if (oldStatus == RecordingStatusRecording && newStatus == RecordingStatusIdle){
+            }else if (oldStatus == RecordingStatusStoppingRecording && newStatus == RecordingStatusIdle){
                 dispatch_async(self.delegateCallbackQueue, ^{
                     @autoreleasepool {
                         [self.delegate coordinator:self didFinishRecordingToOutputFileURL:_recordingURL error:nil];
