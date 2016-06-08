@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGo-gE-EXr">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <color key="backgroundColor" red="0.63894209369999999" green="0.8598760124" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="Z9K-Zy-DRQ"/>
+                                    <constraint firstAttribute="width" constant="320" id="eTU-s7-U4k"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OGo-gE-EXr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TfU-XY-GbQ"/>
+                            <constraint firstItem="OGo-gE-EXr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WnV-lP-DkD"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageContainer" destination="OGo-gE-EXr" id="YYw-Gm-jmB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Photo Browser View Controller-->
+        <scene sceneID="fkA-o0-n3F">
+            <objects>
+                <viewController storyboardIdentifier="PhotoBrowserViewController" id="RAQ-3e-F5J" customClass="PhotoBrowserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5tP-6W-c61"/>
+                        <viewControllerLayoutGuide type="bottom" id="cde-sZ-1WH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lS6-fN-KI5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSB-ag-Vjl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RAQ-3e-F5J" id="D3R-sT-5Zn"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pSB-ag-Vjl" secondAttribute="trailing" id="Q3q-gg-Bhg"/>
+                            <constraint firstItem="pSB-ag-Vjl" firstAttribute="top" secondItem="lS6-fN-KI5" secondAttribute="top" id="QzZ-4B-VkK"/>
+                            <constraint firstItem="pSB-ag-Vjl" firstAttribute="leading" secondItem="lS6-fN-KI5" secondAttribute="leading" id="fgu-23-9nv"/>
+                            <constraint firstItem="cde-sZ-1WH" firstAttribute="top" secondItem="pSB-ag-Vjl" secondAttribute="bottom" id="oqV-qU-EfP"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="scrollView" destination="pSB-ag-Vjl" id="8pa-IE-5Sw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WXO-Yj-pva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="347"/>
+        </scene>
+    </scenes>
+</document>
