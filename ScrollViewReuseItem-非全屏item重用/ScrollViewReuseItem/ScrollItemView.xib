@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScrollItemView">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b9s-zb-gjB">
+                    <rect key="frame" x="5" y="5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="7ZJ-vF-OTs"/>
+                        <constraint firstAttribute="height" constant="40" id="enJ-Jg-QjH"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-MP-u5D">
+                    <rect key="frame" x="7.5" y="21" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="b9s-zb-gjB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Err-fc-4h9"/>
+                <constraint firstItem="mYa-MP-u5D" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="G5Y-7j-ZZR"/>
+                <constraint firstAttribute="trailing" secondItem="b9s-zb-gjB" secondAttribute="trailing" constant="5" id="jMK-gY-GXO"/>
+                <constraint firstItem="mYa-MP-u5D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="o3m-rN-tgx"/>
+                <constraint firstItem="b9s-zb-gjB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zdv-n8-duW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="b9s-zb-gjB" id="ZNu-7V-ZXZ"/>
+                <outlet property="indexLabel" destination="mYa-MP-u5D" id="FXn-Az-sK2"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="284.5"/>
+        </view>
+    </objects>
+</document>
