@@ -16,6 +16,9 @@
 #define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT    [[UIScreen mainScreen] bounds].size.height
 
+
+static const int ItemBaseTag = 1000;
+
 //static const int ItemBaseTag = 1000;
 
 @interface ViewController ()<UIScrollViewDelegate>{
@@ -25,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentWidthConstraint;
 
+@property (strong, nonatomic) NSMutableArray<ScrollItemView *> *itemViewArray;
 @property (strong, nonatomic) NSMutableArray<ScrollItemView *> *reusableViewArray;
 @property (strong, nonatomic) NSMutableArray<ScrollItemView *> *visibleViewArray;
 
@@ -37,45 +41,78 @@
     
     _reusableViewArray = [NSMutableArray array];
     _visibleViewArray = [NSMutableArray array];
+    _itemViewArray = [NSMutableArray array];
     
-    [self setupPages];
+    [self addItemsToScrollContainerView];
+}
+
+
+/**
+ *  添加不可重用的 item
+ */
+-(void)addItemsToScrollContainerView{
+    
+    self.contentWidthConstraint.constant = TOTAL_PAGES * ITEM_WIDTH;
+    [self.view layoutIfNeeded];
+//    __weak typeof(self) weakSelf = self;
+//    int  tempCount = (int)(SCREEN_WIDTH) / (int)(ITEM_WIDTH) - 1 ;
+    for (int i = 0; i < TOTAL_PAGES; i++) {
+        NSArray* nibView = [[NSBundle mainBundle] loadNibNamed:@"ScrollItemView" owner:nil options:nil];
+        ScrollItemView *itemView = [nibView firstObject];
+        [self.itemViewArray addObject:itemView];
+        itemView.tag = ItemBaseTag + i;
+        itemView.indexLabel.text = [NSString stringWithFormat:@"item: %d", i];
+//        if (i < self.itemsArray.count) {
+//            itemView.contentContainerView.backgroundColor = [self randomColor];
+//        }else{
+//            itemView.contentContainerView.backgroundColor = [UIColor clearColor];
+//        }
+        
+        [_scrollContentView addSubview:itemView];
+        
+        [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(ITEM_WIDTH);
+            make.height.mas_equalTo(ITEM_WIDTH);
+            if (i == 0) {
+                // 第一项
+                make.left.mas_equalTo(itemView.superview.mas_left);
+                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(0);
+                //                make.bottom.mas_equalTo(itemView.superview.mas_bottom).offset(60);
+                make.height.mas_equalTo(itemView.superview.mas_height);
+            }else if (i == TOTAL_PAGES - 1){
+                // 最后一项
+                make.left.mas_equalTo([itemView.superview viewWithTag:(ItemBaseTag + i - 1)].mas_right);
+//                make.right.mas_equalTo(itemView.superview.mas_right);
+                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(50);
+            }else{
+                // 中间项
+                make.left.mas_equalTo([itemView.superview viewWithTag:(ItemBaseTag + i - 1)].mas_right);
+                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(50);
+            }
+        }];
+    }
+}
+
+
+/**
+ *  添加可重用的 item
+ */
+-(void)addReusalbeItemToScrollContainerView{
+    [self.contentWidthConstraint autoRemove];
+    CGFloat mutiplier = (TOTAL_PAGES * ITEM_WIDTH) / self.scrollView.frame.size.width ;
+    self.contentWidthConstraint = [self.scrollContentView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.scrollView withMultiplier:mutiplier];
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
     
     _OnePageItemCount = ceilf(_scrollView.bounds.size.width / ITEM_WIDTH);
     for (int i = 0 ; i < _OnePageItemCount; i++) {
         [self loadPage:i];
-        ScrollItemView *itemView = [_visibleViewArray objectAtIndex:i];
-//        [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.width.mas_equalTo(ITEM_WIDTH);
-//            make.height.mas_equalTo(ITEM_WIDTH);
-//            if (i == 0) {
-//                // 第一项
-//                make.left.mas_equalTo(itemView.superview.mas_left);
-//                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(60);
-//            }else if (i == _OnePageItemCount - 1){
-//                // 最后一项
-//                make.left.mas_equalTo([_scrollView viewWithTag:(i - 1)].mas_right);
-//                make.right.mas_equalTo(itemView.superview.mas_right);
-//                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(110);
-//            }else{
-//                // 中间项
-//                make.left.mas_equalTo([_scrollView viewWithTag:(i - 1)].mas_right);
-//                make.bottom.mas_equalTo(itemView.superview.mas_bottom).mas_offset(110);
-//            }
-//        }];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)setupPages{
-    [self.contentWidthConstraint autoRemove];
-    CGFloat mutiplier = (TOTAL_PAGES * ITEM_WIDTH) / self.scrollView.frame.size.width ;
-    self.contentWidthConstraint = [self.scrollContentView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.scrollView withMultiplier:mutiplier];
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
 }
 
 -(void)loadPage:(NSInteger)page{
@@ -161,11 +198,9 @@
     if (currentIndex > TOTAL_PAGES - 2 || currentIndex < 0) {
         return;
     }
-    //    NSInteger preIndex = currentIndex - 1;
-//    NSInteger nextIndex = currentIndex + 1;
     
     //    CGFloat rate = (offseX - (currentIndex * ITEM_WIDTH)) / ITEM_WIDTH;
-//    CGFloat scale = (_scrollView.contentOffset.x - currentIndex * ITEM_WIDTH) / ITEM_WIDTH;
+
     
 //    
 //    ScrollItemView *needReSetItemView = nil;
@@ -179,58 +214,72 @@
 //    ScrollItemView *currentItemView = needReSetItemView;
 //    ScrollItemView *nextItemView = [self.visibleViewArray objectAtIndex:[_visibleViewArray indexOfObject:needReSetItemView] + 1];
     
+    CGFloat scale = (_scrollView.contentOffset.x - currentIndex * ITEM_WIDTH) / ITEM_WIDTH;
+    NSInteger preIndex = currentIndex - 1;
+    NSInteger nextIndex = currentIndex + 1;
+    ScrollItemView *preItemView = preIndex > 0 ? [self.itemViewArray objectAtIndex:preIndex] : nil;
+    ScrollItemView *currentItemView = [self.itemViewArray objectAtIndex:currentIndex];
+    ScrollItemView *nextItemView = [self.itemViewArray objectAtIndex:nextIndex];
     
-    //    ScrollItemView *preItemView = preIndex > 0 ? [self.itemViewArray objectAtIndex:preIndex] : nil;
-//    ScrollItemView *currentItemView = [self.itemViewArray objectAtIndex:currentIndex];
-//    ScrollItemView *nextItemView = [self.itemViewArray objectAtIndex:nextIndex];
+    if (preItemView) {
+        [preItemView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(preItemView.superview.mas_bottom).mas_offset(50);
+        }];
+    }
+
+    [currentItemView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(currentItemView.superview.mas_bottom).mas_offset(MIN(scale* ITEM_WIDTH , 50));
+    }];
     
-    //    if (preItemView) {
-    //        [preItemView mas_updateConstraints:^(MASConstraintMaker *make) {
-    //            make.bottom.equalTo(preItemView.superview.mas_bottom).mas_offset(110 - scale* ITEM_WIDTH);
-    //        }];
-    //    }
+    [nextItemView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(nextItemView.superview.mas_bottom).mas_offset(MIN(60 - scale* ITEM_WIDTH, 50));
+    }];
 //    
-//    [currentItemView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(currentItemView.superview.mas_bottom).mas_offset(MIN(scale* ITEM_WIDTH + 60, 110));
-//    }];
-//    
-//    [nextItemView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(nextItemView.superview.mas_bottom).mas_offset(MIN(120 - scale* ITEM_WIDTH, 110));
-//    }];
-    
-    NSInteger page = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
-    page = MAX(page, 0);
-    page = MIN(page, TOTAL_PAGES - 1);
-    [self showViewForPage:page];
+//    NSInteger page = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
+//    page = MAX(page, 0);
+//    page = MIN(page, TOTAL_PAGES - 1);
+//    [self showViewForPage:page];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if (!decelerate) {
         NSInteger currentIndex = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
-        ScrollItemView *needReSetItemView = nil;
-        for (ScrollItemView  *itemView in _visibleViewArray) {
-            if (itemView.tag == currentIndex) {
-                needReSetItemView = itemView;
-                break;
-            }
-        }
+        ScrollItemView *needReSetItemView = [_itemViewArray objectAtIndex:currentIndex];
         CGFloat offsetX = (CGRectGetMidX(needReSetItemView.frame) - ITEM_WIDTH / 2);
         [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+        
+        // 重置其他 item 的底部约束
+        for (int i = 0; i < TOTAL_PAGES; i++) {
+            if ( (i == currentIndex -1) || (i == currentIndex) || (i == currentIndex + 1)) {
+                continue;
+            }
+            ScrollItemView *itemView = [_itemViewArray objectAtIndex:i];
+            [itemView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(itemView.superview.mas_bottom).mas_offset(50);
+            }];
+            
+        }
     }
     
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger currentIndex = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
-    ScrollItemView *needReSetItemView = nil;
-    for (ScrollItemView  *itemView in _visibleViewArray) {
-        if (itemView.tag == currentIndex) {
-            needReSetItemView = itemView;
-            break;
-        }
-    }
+    ScrollItemView *needReSetItemView = [_itemViewArray objectAtIndex:currentIndex];
     CGFloat offsetX = (CGRectGetMidX(needReSetItemView.frame) - ITEM_WIDTH / 2) ;
     [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
+    // 重置其他 item 的底部约束
+    for (int i = 0; i < TOTAL_PAGES; i++) {
+        if ( (i == currentIndex -1) || (i == currentIndex) || (i == currentIndex + 1)) {
+            continue;
+        }
+        ScrollItemView *itemView = [_itemViewArray objectAtIndex:i];
+        [itemView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(itemView.superview.mas_bottom).mas_offset(50);
+        }];
+
+    }
 }
 
 

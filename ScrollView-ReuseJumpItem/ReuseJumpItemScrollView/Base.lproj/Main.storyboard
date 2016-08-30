@@ -22,7 +22,10 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gku-Wh-Tgh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="TBe-FV-IbQ"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -32,7 +35,6 @@
                                     <constraint firstAttribute="bottom" secondItem="gku-Wh-Tgh" secondAttribute="bottom" id="h3e-6g-hQB"/>
                                     <constraint firstItem="gku-Wh-Tgh" firstAttribute="height" secondItem="S5h-jw-zfd" secondAttribute="height" id="kdB-fb-qC9"/>
                                     <constraint firstAttribute="height" constant="60" id="oIA-4f-CI6"/>
-                                    <constraint firstItem="gku-Wh-Tgh" firstAttribute="width" secondItem="S5h-jw-zfd" secondAttribute="width" id="wc9-Ml-f3K"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="37e-yn-Ey4"/>
@@ -48,7 +50,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="contentWidthConstraint" destination="wc9-Ml-f3K" id="sCP-xh-Ikk"/>
+                        <outlet property="contentWidthConstraint" destination="TBe-FV-IbQ" id="b8Y-TG-NHX"/>
                         <outlet property="scrollContentView" destination="gku-Wh-Tgh" id="j86-zS-b2T"/>
                         <outlet property="scrollView" destination="S5h-jw-zfd" id="NQr-gW-dn2"/>
                     </connections>
