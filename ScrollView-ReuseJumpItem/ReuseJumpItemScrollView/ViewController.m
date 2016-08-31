@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 #import "ScrollItemView.h"
-#import "PureLayout.h"
 #import <Masonry.h>
 
 #define ITEM_WIDTH 60.0
-#define TOTAL_PAGES 20
+#define TOTAL_PAGES 30
 #define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT    [[UIScreen mainScreen] bounds].size.height
 
@@ -97,7 +96,8 @@ static const int ItemBaseTag = 1000;
  *  添加可重用的 item
  */
 -(void)addReusalbeItemToScrollContainerView{
-    self.contentWidthConstraint.constant = TOTAL_PAGES * ITEM_WIDTH;
+    int  tempCount = (int)(SCREEN_WIDTH) / (int)(ITEM_WIDTH) - 1 ;
+    self.contentWidthConstraint.constant = (TOTAL_PAGES + tempCount) * ITEM_WIDTH;
     
     _OnePageItemCount = ceilf(_scrollView.bounds.size.width / ITEM_WIDTH) + 1;
     for (int i = 0 ; i < _OnePageItemCount; i++) {
@@ -196,7 +196,7 @@ static const int ItemBaseTag = 1000;
     }
     
     // 是否需要显示新的视图
-    for (NSInteger index = firstIndex; index < lastIndex; index++) {
+    for (NSInteger index = firstIndex; index <= lastIndex; index++) {
         BOOL isShow = NO;
         
         for (ScrollItemView *itemView in _visibleViewArray) {
@@ -245,7 +245,7 @@ static const int ItemBaseTag = 1000;
 //
     // 2. 可重用部分
     
-    NSLog(@"currentIndex = %ld", currentIndex);
+//    NSLog(@"currentIndex = %ld", currentIndex);
     ScrollItemView *needReSetItemView = nil;
     for (ScrollItemView  *itemView in _visibleViewArray) {
         if (itemView.tag - ItemBaseTag == currentIndex) {
@@ -281,6 +281,7 @@ static const int ItemBaseTag = 1000;
     [self showViewForPage:page];
 }
 
+#pragma mark - 不能重用部分的
 //-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 //    if (!decelerate) {
 //        NSInteger currentIndex = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
@@ -322,5 +323,69 @@ static const int ItemBaseTag = 1000;
 //    }
 //}
 
+
+#pragma mark - 可重用部分的
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if (!decelerate) {
+        NSInteger currentIndex = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
+        if (currentIndex > TOTAL_PAGES) {
+            currentIndex = TOTAL_PAGES - 1;
+        }
+        ScrollItemView *needReSetItemView = nil;
+        for (ScrollItemView  *itemView in _visibleViewArray) {
+            if (itemView.tag - ItemBaseTag == currentIndex) {
+                needReSetItemView = itemView;
+                break;
+            }
+        }
+        CGFloat offsetX = (CGRectGetMidX(needReSetItemView.frame) - ITEM_WIDTH / 2);
+        [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+
+        // 重置其他 item 的底部约束
+        for (int i = 0; i < TOTAL_PAGES; i++) {
+            if ( (i == currentIndex -1) || (i == currentIndex) || (i == currentIndex + 1)) {
+                continue;
+            }
+            for (ScrollItemView  *itemView in _visibleViewArray) {
+                if (itemView.tag - ItemBaseTag == i) {
+                    [itemView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.bottom.equalTo(itemView.superview.mas_bottom).mas_offset(50);
+                    }];
+                }
+            }
+        }
+    }
+
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSInteger currentIndex = roundf(scrollView.contentOffset.x / ITEM_WIDTH);
+    if (currentIndex > TOTAL_PAGES) {
+        currentIndex = TOTAL_PAGES - 1;
+    }
+    ScrollItemView *needReSetItemView = nil;
+    for (ScrollItemView  *itemView in _visibleViewArray) {
+        if (itemView.tag - ItemBaseTag == currentIndex) {
+            needReSetItemView = itemView;
+            break;
+        }
+    }
+    CGFloat offsetX = (CGRectGetMidX(needReSetItemView.frame) - ITEM_WIDTH / 2) ;
+    [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+
+    // 重置其他 item 的底部约束
+    for (int i = 0; i < TOTAL_PAGES; i++) {
+        if ( (i == currentIndex -1) || (i == currentIndex) || (i == currentIndex + 1)) {
+            continue;
+        }
+        for (ScrollItemView  *itemView in _visibleViewArray) {
+            if (itemView.tag - ItemBaseTag == i) {
+                [itemView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.bottom.equalTo(itemView.superview.mas_bottom).mas_offset(50);
+                }];
+            }
+        }
+    }
+}
 
 @end

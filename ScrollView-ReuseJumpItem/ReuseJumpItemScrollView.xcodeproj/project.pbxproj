@@ -13,9 +13,6 @@
 		25BB31FD1D745FFF007C5C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BB31FB1D745FFF007C5C7E /* Main.storyboard */; };
 		25BB31FF1D745FFF007C5C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BB31FE1D745FFF007C5C7E /* Assets.xcassets */; };
 		25BB32021D745FFF007C5C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BB32001D745FFF007C5C7E /* LaunchScreen.storyboard */; };
-		25BB32131D746083007C5C7E /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB320B1D746083007C5C7E /* ALView+PureLayout.m */; };
-		25BB32141D746083007C5C7E /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB320D1D746083007C5C7E /* NSArray+PureLayout.m */; };
-		25BB32151D746083007C5C7E /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB320F1D746083007C5C7E /* NSLayoutConstraint+PureLayout.m */; };
 		25BB321A1D746164007C5C7E /* ScrollItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BB32181D746164007C5C7E /* ScrollItemView.m */; };
 		25BB321B1D746164007C5C7E /* ScrollItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BB32191D746164007C5C7E /* ScrollItemView.xib */; };
 		B86BDE7F9D9BDB298D7690D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C78E9F90DBD6FB602A182468 /* libPods.a */; };
@@ -32,15 +29,6 @@
 		25BB31FE1D745FFF007C5C7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25BB32011D745FFF007C5C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25BB32031D745FFF007C5C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25BB320A1D746083007C5C7E /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
-		25BB320B1D746083007C5C7E /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
-		25BB320C1D746083007C5C7E /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		25BB320D1D746083007C5C7E /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		25BB320E1D746083007C5C7E /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		25BB320F1D746083007C5C7E /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		25BB32101D746083007C5C7E /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
-		25BB32111D746083007C5C7E /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
-		25BB32121D746083007C5C7E /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		25BB32171D746164007C5C7E /* ScrollItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollItemView.h; sourceTree = "<group>"; };
 		25BB32181D746164007C5C7E /* ScrollItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollItemView.m; sourceTree = "<group>"; };
 		25BB32191D746164007C5C7E /* ScrollItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollItemView.xib; sourceTree = "<group>"; };
@@ -92,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				25BB32161D746159007C5C7E /* ItemView */,
-				25BB32091D746083007C5C7E /* PureLayout */,
 				25BB31F51D745FFF007C5C7E /* AppDelegate.h */,
 				25BB31F61D745FFF007C5C7E /* AppDelegate.m */,
 				25BB31F81D745FFF007C5C7E /* ViewController.h */,
@@ -112,22 +99,6 @@
 				25BB31F31D745FFF007C5C7E /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		25BB32091D746083007C5C7E /* PureLayout */ = {
-			isa = PBXGroup;
-			children = (
-				25BB320A1D746083007C5C7E /* ALView+PureLayout.h */,
-				25BB320B1D746083007C5C7E /* ALView+PureLayout.m */,
-				25BB320C1D746083007C5C7E /* NSArray+PureLayout.h */,
-				25BB320D1D746083007C5C7E /* NSArray+PureLayout.m */,
-				25BB320E1D746083007C5C7E /* NSLayoutConstraint+PureLayout.h */,
-				25BB320F1D746083007C5C7E /* NSLayoutConstraint+PureLayout.m */,
-				25BB32101D746083007C5C7E /* PureLayout+Internal.h */,
-				25BB32111D746083007C5C7E /* PureLayout.h */,
-				25BB32121D746083007C5C7E /* PureLayoutDefines.h */,
-			);
-			path = PureLayout;
 			sourceTree = "<group>";
 		};
 		25BB32161D746159007C5C7E /* ItemView */ = {
@@ -274,9 +245,6 @@
 				25BB31F71D745FFF007C5C7E /* AppDelegate.m in Sources */,
 				25BB321A1D746164007C5C7E /* ScrollItemView.m in Sources */,
 				25BB31F41D745FFF007C5C7E /* main.m in Sources */,
-				25BB32131D746083007C5C7E /* ALView+PureLayout.m in Sources */,
-				25BB32141D746083007C5C7E /* NSArray+PureLayout.m in Sources */,
-				25BB32151D746083007C5C7E /* NSLayoutConstraint+PureLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,11 +359,13 @@
 			baseConfigurationReference = C52FC074BCE169D2F70FB96C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MONSTAR LAB,INC.";
 				INFOPLIST_FILE = ReuseJumpItemScrollView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snqu.ReuseJumpItemScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "49e43ae1-2176-41c1-8bec-bb047e7f2583";
 			};
 			name = Debug;
 		};
@@ -404,11 +374,13 @@
 			baseConfigurationReference = BED74F38F69C348276099095 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MONSTAR LAB,INC.";
 				INFOPLIST_FILE = ReuseJumpItemScrollView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snqu.ReuseJumpItemScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "49e43ae1-2176-41c1-8bec-bb047e7f2583";
 			};
 			name = Release;
 		};
